@@ -1,0 +1,62 @@
+@mixin gridPosition($column-start, $column-end, $row-start, $row-end) {
+    grid-column-start: $column-start;
+    grid-column-end: $column-end;
+    grid-row-start: $row-start;
+    grid-row-end: $row-end;
+}
+
+@mixin ratesPosition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $Light-Grayish-Magenta;
+    color: $Very-Dark-Magenta;
+    border-radius: 7px;
+    font-size: 80%;
+    font-weight: 700;
+
+    .stars {
+        margin-right: 2%;
+
+    }
+
+}
+
+@mixin ratesPosition-landscape {
+    flex-direction: row;
+    align-items: auto;
+    justify-content: flex-start;
+    font-size: 55%;
+    padding: 3% 0 3%;
+
+
+    .stars {
+
+        transform: scale(0.6);
+    }
+
+
+}
+
+@mixin ratesPosition-landscape-1024px {
+    font-size: 70%;
+
+    .stars {
+        transform: scale(0.8);
+
+    }
+}
+
+@mixin ratesPosition-landscape-1400px {
+    font-size: 80%;
+
+    .stars {
+        transform: scale(1);
+        margin-left: 3vh;
+    }
+}
+
+@mixin ratesPosition-landscape-1600px {
+    font-size: 90%;
+}

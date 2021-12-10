@@ -1,0 +1,270 @@
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+
+body {
+    font-family: 'Spartan', sans-serif;
+}
+
+.wrap {
+    width: 90%;
+    margin: 10% auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.85fr 0.30fr 0.30fr 0.30fr 0.2fr 1fr 1fr 1fr;
+    gap: 1%;
+    margin-bottom: 40%;
+
+
+    .header {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        text-align: center;
+
+        .main {
+            font-size: 170%;
+            width: 80%;
+            margin: 0 auto;
+            line-height: 98%;
+            font-weight: bold;
+            margin-bottom: 5%;
+            color: $Very-Dark-Magenta;
+        }
+
+        .main-description {
+            font-size: 80%;
+            width: 95%;
+            margin: 0 auto;
+            line-height: 150%;
+            color: $Dark-Grayish-Magenta
+        }
+
+    }
+
+    .rate1 {
+        @include gridPosition(1, 2, 2, 3);
+        @include ratesPosition;
+    }
+
+    .rate2 {
+        @include gridPosition(1, 2, 3, 4);
+        @include ratesPosition;
+    }
+
+    .rate3 {
+        @include gridPosition(1, 2, 4, 5);
+        @include ratesPosition;
+    }
+
+    .customer-opinion {
+
+        background-color: $Very-Dark-Magenta;
+        border-radius: 7px;
+
+        .account {
+            display: flex;
+            margin: 10% 0 8% 10%;
+
+            img {
+                width: 13%;
+                height: 13%;
+                border-radius: 50%;
+                margin-right: 8%;
+            }
+
+            .name {
+                font-size: 80%;
+                color: $White;
+                font-weight: 700;
+                margin-bottom: 3%;
+            }
+
+            .status {
+                font-size: 70%;
+                font-weight: 700;
+                color: $Light-Grayish-Magenta;
+                opacity: 0.5;
+            }
+
+        }
+
+        .describle {
+            font-size: 78%;
+            width: 80%;
+            margin: 0 0 10% 10%;
+            color: $White;
+            opacity: 0.7;
+        }
+    }
+
+    .colton {
+        @include gridPosition(1, 2, 6, 7);
+    }
+
+    .irene {
+        @include gridPosition(1, 2, 7, 8);
+    }
+
+    .anne {
+        @include gridPosition(1, 2, 8, 9);
+    }
+}
+
+@media (orientation:landscape) {
+    .wrap {
+        width: 95%;
+        grid-template-columns: 1.14fr 0.5fr 0.2fr 0.2fr 0.2fr 0.8fr 0.1fr 0.1fr;
+        grid-template-rows: 0.13fr 0.13fr 0.13fr 0.05fr 0.3fr 0.05fr 0.05fr 0.80fr 0.05fr 0.05fr 0.05fr;
+        row-gap: 3%;
+        margin-top: 4%;
+
+        .header {
+            @include gridPosition(1, 4, 1, 4);
+            text-align: left;
+            margin: 5%;
+
+            .main {
+                font-size: 170%;
+                margin: 0 0 5% 0;
+            }
+
+            .main-description {
+                font-size: 70%;
+                margin: 0 0 8% 0
+            }
+        }
+
+        .customer-opinion {
+            .account {
+                .name {
+                    font-size: 60%;
+                }
+
+                .status {
+                    font-size: 52%;
+                }
+
+
+            }
+
+            .describle {
+                font-size: 65%;
+            }
+        }
+
+        .rate1 {
+            @include gridPosition(3, 7, 1, 2);
+            @include ratesPosition-landscape;
+
+        }
+
+        .rate2 {
+            @include gridPosition(4, 8, 2, 3);
+            @include ratesPosition-landscape;
+        }
+
+        .rate3 {
+            @include gridPosition(5, 9, 3, 4);
+            @include ratesPosition-landscape;
+
+        }
+
+        .colton {
+            @include gridPosition(1, 2, 6, 9);
+        }
+
+        .irene {
+            @include gridPosition(2, 6, 7, 10);
+        }
+
+        .anne {
+            @include gridPosition(6, 9, 8, 11);
+        }
+    }
+}
+
+@media (orientation:landscape) and (min-width:1024px) {
+    .wrap {
+        grid-template-rows: 0.13fr 0.13fr 0.13fr 0.05fr 0.5fr 0.05fr 0.05fr 0.80fr 0.05fr 0.05fr 0.05fr;
+        width: 80%;
+
+        .rate1,
+        .rate2,
+        .rate3 {
+            @include ratesPosition-landscape-1024px;
+        }
+
+        .header {
+            .main {
+                font-size: 5vh;
+                margin: 0 0 5% 0;
+            }
+
+            .main-description {
+                font-size: 100%;
+            }
+        }
+    }
+}
+
+@media (orientation:landscape) and (min-width:1400px) {
+    .wrap {
+        width: 75%;
+
+        .header {
+            .main-description {
+                font-size: 2.3vh;
+            }
+        }
+
+        .rate1,
+        .rate2,
+        .rate3 {
+            @include ratesPosition-landscape-1400px;
+        }
+
+        .customer-opinion {
+            .account {
+                margin-bottom: 5%;
+
+                img {
+                    width: 4vh;
+                    height: 4vh;
+                }
+
+                .id {
+                    .name {
+                        font-size: 1.5vh;
+                    }
+
+                    .status {
+                        font-size: 1.3vh;
+                    }
+                }
+            }
+
+            .describle {
+                font-size: 1.6vh;
+
+            }
+        }
+    }
+}
+
+@media (orientation:landscape) and (min-width:1600px) {
+    .wrap {
+        width: 64%;
+
+        .header {
+            .main {
+                font-size: 5.8vh;
+            }
+        }
+
+        .rate1,
+        .rate2,
+        .rate3 {
+            @include ratesPosition-landscape-1600px;
+        }
+    }
+}
